@@ -1,20 +1,13 @@
 #!/usr/bin/env bash
 # As a point of reference, the environment layout should be as follows
-# /home/$user/Github/Rover_2018_2019 for the OSURC github repo
+# /home/$user/Projects/Rover-Arm-2019-2020 for the Boiler Robotic's Arm Github
 # /home/$user/catkin_workspace for the user's catkin catkin_workspace
 # By keeping this consistent across all development machines, it will make it
 # easier to keep track of things
 
 # Which folders should be symbolically_linked?
 folders_to_link=(
-    ground_station
-    rover_control
-    nimbro_topic_transport
-    rover_main
-    rover_camera
-    rover_status
     rover_arm
-    rover_science
 )
 
 # Print heading
@@ -26,8 +19,8 @@ catkin_workspace_path="$HOME/$catkin_workspace_dir"
 catkin_src_path="$catkin_workspace_path/src"
 
 # Get the rover software directory
-github_rover_repo_dir="Github/Rover_2019_2020"
-github_rover_packages_path="$HOME/$github_rover_repo_dir/software/ros_packages"
+github_rover_repo_dir="Projects/Rover-Arm-2019-2020"
+github_rover_packages_path="$HOME/$github_rover_repo_dir/ros_packages"
 
 # Remove existing symbolic links if necessary
 symlinked_folders=$(find $catkin_src_path -maxdepth 1 -type l)

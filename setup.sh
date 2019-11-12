@@ -5,11 +5,15 @@
 # By keeping this consistent across all development machines, it will make it
 # easier to keep track of things
 
-# Which folders should be symbolically_linked?
+# Which folders should be symbolically_linked
+# rover_arm is from the OSU repository
+# cougarbot is from the ROS tutorial
 folders_to_link=(
     rover_arm
     rover_arm_moveit_config
     mr1718-arm-urdf_export
+    cougarbot
+    cougarbot_moveit_config
 )
 
 # Print heading

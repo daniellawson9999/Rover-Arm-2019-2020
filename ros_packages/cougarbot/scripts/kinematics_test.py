@@ -25,8 +25,9 @@ class ArmController:
         self.delay = 0
         self.data = {}
         self.increment = .1
-        self.inverse_scale = 100
+        self.inverse_scale = 5
         self.mode = mode
+        group_name = "panda_arm"
 
         # init moveit and ros node
         moveit_commander.roscpp_initialize(sys.argv)
@@ -38,8 +39,12 @@ class ArmController:
         scene = moveit_commander.PlanningSceneInterface()
 
         # get the move group associated w/ the arm we are using
-        group_name = "arm"
         move_group = moveit_commander.MoveGroupCommander(group_name)
+
+        # set move group tolerances 
+        move_group.set_goal_position_tolerance(.005)
+        move_group.set_goal_orientation_tolerance((.01))
+
 
         ## Create a `DisplayTrajectory`_ ROS publisher which is used to display
         ## trajectories in Rviz:
